@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/style.css" />
+        <script src="src/index.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="Lheader">
+                <img
+                    class="ring"
+                    src="https://i.pinimg.com/564x/1f/f9/88/1ff988fe00158dd1e57f3cbcc4ab3373.jpg"
+                    width="60px"
+                    height="60px"
+                />
+
+                <span class="text-button">Log-in</span>
+                <span class="text-button">Info</span>
+                <span class="text-button">Contact</span>
+            </div>
+
+            <div class="middle">
+                <span id="hi">계산기 사이트에 오신 것을 환영합니다.</span>
+                <select id="language" onchange="changelang()">
+                    <option value="kor">한국어</option>
+                    <option value="eng">영어</option>
+                    <option value="jap">일본어</option>
+                    <option value="chi">중국어</option>
+                </select>
+            </div>
+
+            <div class="Rheader">
+                <span class="text-button">Home</span>
+                <span class="text-button">User</span>
+                <img
+                    src="https://i.pinimg.com/564x/82/f4/50/82f450aee9fa3b1d32505cb641e242d4.jpg"
+                    alt="profile"
+                    width="40px"
+                    height="40px"
+                />
+            </div>
+        </header>
+        <div class="main">
+            <div class="box">
+                <img
+                    src="https://github.com/mimieee122/calculator/blob/main/LOGO.jpg?raw=true"
+                    alt="logo"
+                    width="450px"
+                    height="80px"
+                />
+                <table>
+                    <tr>
+                        <td colspan="4">
+                            <input type="text" id="display" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <input type="text" id="result" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" onclick="reset()" id="ac">AC</td>
+                        <td onclick="add('/')" id="slash">/</td>
+                    </tr>
+                    <tr>
+                        <td onclick="add('7')" id="seven"></td>
+                        <td onclick="add('8')" id="eight"></td>
+                        <td onclick="add('9')" id="nine"></td>
+                        <td onclick="add('*')" id="multiply">*</td>
+                    </tr>
+                    <tr>
+                        <td onclick="add('4')" id="four"></td>
+                        <td onclick="add('5')" id="five"></td>
+                        <td onclick="add('6')" id="six"></td>
+                        <td onclick="add('-')" id="minus">-</td>
+                    </tr>
+                    <tr>
+                        <td onclick="add('1')" id="one">1</td>
+                        <td onclick="add('2')" id="two">2</td>
+                        <td onclick="add('3')" id="three">3</td>
+                        <td onclick="add('+')" id="plus">+</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" onclick="add('0')" id="zero">0</td>
+                        <td onclick="add('.')" id="ball">.</td>
+                        <td onclick="calculate(event)" id="final">=</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="back">
+                <div id="back_one">
+                    <div class="black">
+                        <img
+                            src="https://github.com/mimieee122/calculator/blob/main/realrealrealfish.png?raw=true"
+                            alt="alert"
+                            width="470px"
+                            height="250px"
+                        />
+                        <img
+                            src="https://github.com/mimieee122/calculator/blob/main/%EB%8B%B9%EA%B5%AC%EA%B3%B5.png?raw=true"
+                            alt="ball"
+                            width="200px"
+                            heigh="200px"
+                        />
+
+                        <div class="note">
+                            <div>
+                                <span>뽑는 순서를 고려하나요?</span>
+                                <select id="q1">
+                                    <option value="yes1">네</option>
+                                    <option value="no1">아니요</option>
+                                </select>
+                            </div>
+                            <div>
+                                <span
+                                    >한번 뽑은 원소를 다시 뽑을 수 있나요?</span
+                                >
+                                <select id="q2">
+                                    <option value="yes2">네</option>
+                                    <option value="no2">아니요</option>
+                                </select>
+                            </div>
+                            <p></p>
+                            <div>
+                                N =
+                                <input
+                                    id="N"
+                                    type="text"
+                                    name="N"
+                                    placeholder="write 'N'"
+                                />
+                            </div>
+                            <div>
+                                M =
+                                <input
+                                    id="M"
+                                    type="text"
+                                    name="M"
+                                    placeholder="write 'M'"
+                                />
+                            </div>
+                            <div>
+                                <button
+                                    type="button"
+                                    class="button"
+                                    onclick="ball_calculate(event)"
+                                >
+                                    <strong>계산</strong>
+                                </button>
+                                <div id="alert">
+                                    <input id="answer" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="back_two">
+                    <img
+                        width="400px"
+                        height="580px"
+                        src="https://i.pinimg.com/564x/a6/75/5a/a6755a0a3b7d0dcc8d7cd3ae755b938a.jpg"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="third">
+            <div id="third1">
+                <div id="third1Logo">
+                    <img
+                        src="https://github.com/mimieee122/calculator/blob/main/%EA%B8%80%EC%9E%90%20%EC%88%98.png?raw=true"
+                        width="500px"
+                        height="250px"
+                    />
+                    <div id="countwords">
+                        내용을 입력 후 확인 버튼을 눌러주세요.
+                        <br /><br />
+                        <textarea id="textInput"></textarea>
+                        <div id="textCheck">
+                            <button onclick="countCharacters()">확인</button>
+                            문자 수 (공백 포함):
+                            <span id="characterCount">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="third2">
+                <div id="green">
+                    <img
+                        id="photo"
+                        src="https://github.com/mimieee122/calculator/blob/main/tree.png?raw=true"
+                        height="250px"
+                        width="300px"
+                    />
+                    <div id="percent">
+                        <img
+                            src="https://github.com/mimieee122/calculator/blob/main/REALLOGO.png?raw=true"
+                            width="250px"
+                            height="70px"
+                        />
+                        <div>
+                            <label for="totalValue">전체값: </label>
+                            <input type="number" id="totalValue" /><br />
+                            <label for="percentValue">퍼센트: </label>
+                            <input
+                                type="number"
+                                id="percentValue"
+                            /><br /><br />
+
+                            <button onclick="calculatePercentage()">
+                                <strong>계산</strong></button
+                            ><br /><br />
+                            <div id="redbox">
+                                <span id="finally">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="green2">
+                    <img
+                        src="https://github.com/mimieee122/calculator/blob/main/%EB%8B%AC%EB%A0%A5.png?raw=true"
+                        width="400px"
+                        height="250px"
+                    />
+                    <div id="date">
+                        <span>날짜를 선택하세요</span>
+                        <input type="date" id="datePicker" />
+                        <button onclick="showDay()">
+                            <strong>요일 확인</strong>
+                        </button>
+                        <p id="selectday"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
